@@ -30,7 +30,7 @@ int main() {
         dup2(pipe_fd2[WRITE], STDERR_FILENO);
         dup2(pipe_fd1[READ], STDIN_FILENO);
         dup2(fd_file, STDOUT_FILENO);
-        execl("/home/zloyaloha/Yandex.Disk/MAI/OS/os_lab_1/src/build/son.out", "/home/zloyaloha/Yandex.Disk/MAI/OS/os_lab_1/src/build/son.out", NULL);
+        execl("son.out", "son.out", NULL);
     } else if (pid > 0) {
         std::string input;
         close(pipe_fd1[READ]);

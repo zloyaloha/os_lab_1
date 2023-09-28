@@ -1,0 +1,3 @@
+Type the name of file: 
+Type string to check: 
+String is valid, check the file
