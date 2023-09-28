@@ -1,13 +1,4 @@
 #include "WriteRead.h"
-#include <iostream>
-#include <string>
-#include "stdio.h"
-#include "unistd.h"
-#include <cstdlib>
-#include "sys/wait.h"
-#include <fstream>
-#include <fcntl.h>
-#include <sys/stat.h>
 
 std::string ScanString(int stream) {
     char c;
