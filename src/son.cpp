@@ -1,6 +1,5 @@
 #include "WriteRead.h"
 
-
 int main() {
     std::string line;
     line = ScanString(STDIN_FILENO);
