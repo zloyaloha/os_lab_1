@@ -34,10 +34,14 @@ int main() {
         std::string input;
         close(pipe_fd1[READ]);
         close(pipe_fd2[WRITE]);
-        WriteString(STDOUT_FILENO, "Type string to check: \n");
-        WriteString(pipe_fd1[WRITE], ScanString(STDIN_FILENO));
-        WriteString(STDOUT_FILENO, ScanString(pipe_fd2[READ]));
-        wait(NULL);
+        while (1) {
+            std::string str;
+            WriteString(STDOUT_FILENO, "Type string to check: \n");
+            str = ScanString(STDIN_FILENO);
+            if (str == "stop\n") break;
+            WriteString(pipe_fd1[WRITE], str);
+            WriteString(STDOUT_FILENO, ScanString(pipe_fd2[READ]));
+        }
         close(pipe_fd1[WRITE]);
         close(pipe_fd2[READ]);
     } else {
